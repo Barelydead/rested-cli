@@ -22,12 +22,12 @@ func Root(db *storage.DB) {
 
 	switch result {
 	case "New request":
-		NewRequest(db, storage.RestedRequest{}) // ✅ pass db here
+		NewRequest(db, storage.RestedRequest{})
 	case "Open collection":
-		OpenCollection(db) // ✅ pass db here
+		OpenCollection(db)
 	case "Exit":
 		db.SaveToFile(storage.DbFile)
-		fmt.Println("\n💾 Data saved. Goodbye!")
+		fmt.Println("\nGoodbye!")
 		os.Exit(0)
 	}
 }
